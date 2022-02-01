@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      header,
+      footer,
+      h2,
+      h3,
+      p {
+        text-align: center;
+      }
+      section {
+        max-width: 1000px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+        gap: 10px;
+        margin: 0 auto 20px;
+      }
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+      header,
+      footer,
+      article {
+        border: solid black 2px;
+      }
+      header,
+      footer,
+      h1 {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Titel</h1>
+    </header>
+    <main>
+      <h2>underoverskrift</h2>
+      <section id="section_1">
+        <article class="a_1">
+          <img
+            id="img1"
+            src="https://placeimg.com/640/480/any"
+            alt=" det gyldne snit"
+          />
+          <h3 class="aa">artikel 1</h3>
+          <p id="p1">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo vero,
+            non deleniti perspiciatis ducimus maxime alias quia ipsum ratione
+            nihil repellendus culpa quidem? Molestiae harum minima modi
+            quisquam, magni repellendus.
+          </p>
+        </article>
+        <article class="a_2">
+          <img src="https://placeimg.com/640/480/any" alt="det gyldne snit" />
+          <h3 class="ab">artikel 2</h3>
+          <p id="p2">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo vero,
+            non deleniti perspiciatis ducimus maxime alias quia ipsum ratione
+            nihil repellendus culpa quidem? Molestiae harum minima modi
+            quisquam, magni repellendus.
+          </p>
+        </article>
+      </section>
+    </main>
+    <footer>footer</footer>
+    <script>
+      //udvælg dom elementer
+      const headtitle = document.querySelector("header h1");
+      console.log(headtitle);
+
+      const title = document.querySelector("main h2");
+      console.log(title);
+
+      const a_1 = document.querySelector("article:nth-child(1) img");
+      console.log(a_1);
+
+      const a_2 = document.querySelector("article:nth-child(2) img");
+      console.log(a_2);
+
+      const aa = document.querySelector(".aa");
+      console.log(aa);
+      const ab = document.querySelector(".ab");
+      console.log(ab);
+
+      const p1 = document.querySelector("#p1");
+      console.log(p1);
+
+      const p2 = document.querySelector("#p2");
+      console.log(p2);
+
+      const footer = document.querySelector("footer");
+      console.log(footer);
+
+      const section = document.querySelector("#section_1");
+      console.log(section);
+
+      const pic = document.querySelector("#img1");
+      console.log(pic);
+      //udskift tekstindhold i elementer
+      p1.textContent = "Hvad så fessor?";
+      p2.textContent = "U Up?";
+      aa.textContent = "hej med dig";
+      ab.textContent = "goddag";
+      //udskift billeder
+      pic.src = "kat.png";
+      //tilføj nyt element
+      const newArticle = document.createElement("article");
+      const newImage = document.createElement("img");
+      const newH3 = document.createElement("h3");
+      const newP = document.createElement("p");
+      section.appendChild(newArticle);
+      newArticle.appendChild(newImage);
+      newArticle.appendChild(newH3);
+      newArticle.appendChild(newP);
+      newImage.src = "pink.png";
+      newH3.textContent = "whats up";
+      newP.textContent = "hvad skal du i dag?";
+    </script>
+  </body>
+</html>
